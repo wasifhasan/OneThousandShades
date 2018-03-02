@@ -15,7 +15,7 @@ export class ProductCreateComponent implements OnInit {
   }
 	
 	saveProduct() {
-    this.http.post('/addProduct', this.product)
+    this.http.post('/api/addProduct', this.product)
       .subscribe(res => {
           this.router.navigate(['/products', res]);
         }, (err) => {

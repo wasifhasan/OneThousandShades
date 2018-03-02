@@ -18,7 +18,7 @@ export class ContactEditComponent implements OnInit {
   }
 
   getContact(id) {
-    this.http.get('/contacts/'+id).subscribe(data => {
+    this.http.get('/app/contacts/'+id).subscribe(data => {
       this.contact = data;
     });
   }

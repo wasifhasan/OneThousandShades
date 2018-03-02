@@ -13,10 +13,10 @@ export class HomepageComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
-  this.http.get('/productCategory').subscribe(data=>{
+  this.http.get('/api/productCategory').subscribe(data=>{
 	  this.productCatgories=data;
 	  });
-	 this.http.get('/productCategoryMap').subscribe(data=>{
+	 this.http.get('/api/productCategoryMap').subscribe(data=>{
 	  this.productMap=data;
 	  });
   }

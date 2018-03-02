@@ -53,7 +53,7 @@ const appRoutes: Routes = [
   },
    { 
 	path: '',
-    redirectTo: "/home",
+    redirectTo: "/contact",
     pathMatch: 'full'
   },
  

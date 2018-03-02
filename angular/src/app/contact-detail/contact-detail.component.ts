@@ -18,7 +18,7 @@ export class ContactDetailComponent implements OnInit {
   }
 
   getContactDetail(id) {
-    this.http.get('/contacts/'+id).subscribe(data => {
+    this.http.get('/api/contacts/'+id).subscribe(data => {
       this.contact = data;
     });
   }
