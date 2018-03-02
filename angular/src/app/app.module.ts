@@ -15,6 +15,7 @@ import { ProductCreateComponent } from './product-create/product-create.componen
 import { HomepageComponent } from './homepage/homepage.component';
 
 const appRoutes: Routes = [
+	
  {
     path: 'home',
     component: HomepageComponent,
@@ -50,10 +51,12 @@ const appRoutes: Routes = [
     component: ContactEditComponent,
     data: { title: 'Edit Contact' }
   },
-  { path: '',
-    redirectTo: '/home',
+   { 
+	path: '',
+    redirectTo: "/home",
     pathMatch: 'full'
-  }
+  },
+ 
 ];
 
 @NgModule({
