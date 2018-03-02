@@ -12,8 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const appRoutes: Routes = [
+ {
+    path: 'home',
+    component: HomepageComponent,
+    data: { title: 'Homepage' }
+  },
   {
     path: 'product',
     component: ProductComponent,
@@ -45,7 +51,7 @@ const appRoutes: Routes = [
     data: { title: 'Edit Contact' }
   },
   { path: '',
-    redirectTo: '/product',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
@@ -58,7 +64,8 @@ const appRoutes: Routes = [
 	ContactCreateComponent,
 	ContactEditComponent,
 	ProductComponent,
-	ProductCreateComponent
+	ProductCreateComponent,
+	HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,7 @@ const appRoutes: Routes = [
   	HttpClientModule,
 	RouterModule.forRoot(
     appRoutes,
-    { enableTracing: true } // <-- debugging purposes only
+    { useHash:true } // <-- debugging purposes only
   )
   ],
   providers: [],
