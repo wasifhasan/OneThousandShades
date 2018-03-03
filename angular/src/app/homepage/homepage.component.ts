@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -8,17 +8,34 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-	productCatgories:any;
-	productMap:any;
-  constructor(private http:HttpClient) { }
+  productCatgories: any;
+  productMap: any;
+  title = 'Welcome To OneThousandShade';
+  images;
+  constructor(private http: HttpClient) {
+    this.images = [
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
+      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'}
+    ];
+  }
 
   ngOnInit() {
-  this.http.get('/api/productCategory').subscribe(data=>{
-	  this.productCatgories=data;
-	  });
-	 this.http.get('/api/productCategoryMap').subscribe(data=>{
-	  this.productMap=data;
-	  });
+    this.http.get('/api/productCategory').subscribe(data => {
+      this.productCatgories = data;
+    });
+    this.http.get('/api/productCategoryMap').subscribe(data => {
+      this.productMap = data;
+    });
   }
 
 }
