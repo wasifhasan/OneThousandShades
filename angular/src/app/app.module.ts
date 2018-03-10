@@ -13,9 +13,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { KeysPipe } from './keys.pipe';
+import {ImageZoomModule} from 'angular2-image-zoom';
+
 
 const appRoutes: Routes = [
-	
  {
     path: 'home',
     component: HomepageComponent,
@@ -51,9 +53,9 @@ const appRoutes: Routes = [
     component: ContactEditComponent,
     data: { title: 'Edit Contact' }
   },
-   { 
-	path: '',
-    redirectTo: "/contact",
+  { 
+	  path: '',
+    redirectTo: "/home",
     pathMatch: 'full'
   },
  
@@ -63,17 +65,19 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ContactComponent,
-	ContactDetailComponent,
-	ContactCreateComponent,
-	ContactEditComponent,
-	ProductComponent,
-	ProductCreateComponent,
-	HomepageComponent
+  	ContactDetailComponent,
+  	ContactCreateComponent,
+	  ContactEditComponent,
+	  ProductComponent,
+	  ProductCreateComponent,
+  	HomepageComponent,
+  	KeysPipe
   ],
   imports: [
     BrowserModule,
   	FormsModule,
   	HttpClientModule,
+    ImageZoomModule,
 	RouterModule.forRoot(
     appRoutes,
     { useHash:true } // <-- debugging purposes only

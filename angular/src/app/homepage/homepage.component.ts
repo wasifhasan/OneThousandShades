@@ -7,11 +7,15 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
+  
 export class HomepageComponent implements OnInit {
+  mouseover:any;
   productCatgories: any;
   productMap: any;
-  title = 'Welcome To OneThousandShade';
-  images;
+  images:any;
+  title = 'Welcome To OneThousandShade';  
+  
+  
   constructor(private http: HttpClient) {
     this.images = [
       {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
