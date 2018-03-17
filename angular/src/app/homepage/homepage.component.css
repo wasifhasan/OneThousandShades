@@ -19,3 +19,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+
+/* Styles go here */
+* { box-sizing: border-box};
+ul {list-style: none}
+.scrollable { height: 700px;}
+
+.scrollable.section {overflow:auto;}

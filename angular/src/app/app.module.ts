@@ -15,6 +15,8 @@ import { ProductCreateComponent } from './product-create/product-create.componen
 import { HomepageComponent } from './homepage/homepage.component';
 import { KeysPipe } from './keys.pipe';
 import {ImageZoomModule} from 'angular2-image-zoom';
+import {VirtualScrollModule} from 'angular2-virtual-scroll';
+import { Ng2ScrollableModule } from 'ng2-scrollable';
 
 
 const appRoutes: Routes = [
@@ -78,6 +80,8 @@ const appRoutes: Routes = [
   	FormsModule,
   	HttpClientModule,
     ImageZoomModule,
+    VirtualScrollModule,
+    Ng2ScrollableModule,
 	RouterModule.forRoot(
     appRoutes,
     { useHash:true } // <-- debugging purposes only

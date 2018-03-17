@@ -309,7 +309,7 @@
 							</div>
 						</div><!--/brands_products-->
 						
-						<div class="price-range"><!--price-range-->
+						<div class="price-range" ><!--price-range-->
 							<h2>Price Range</h2>
 							<div class="well text-center">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
@@ -317,39 +317,48 @@
 							</div>
 						</div><!--/price-range-->
 						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="assets/images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
-					
 					</div>
 				</div>
 				
-				<div class="col-sm-9 padding-right">
-				<img [imageZoom]="assets/images/home/gallery1.jpg"  src="assets/images/home/gallery1.jpg" [style.width.px]="width" [style.height.px]="height"/>
-					<div class="features_items"><!--features_items-->
+				
+				<div class="col-sm-9 padding-right" >
+
+				<fieldset>
+				<div id="v-scrollable" class="scrollable section" ng2-scrollable (elementVisible)="id = $event.id">
+					<div class="features_items" ><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						<ng-container *ngFor="let productDetail of productMap['Calligraphy'];  let i = index">
-							<div class="col-sm-4"  (mouseenter)="mouseover=i" (mouseleave)="mouseover=null">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-											<div class="productinfo text-center" >
-											
-											
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-									</div>
-									<div class="choose">
-										<ul class="nav nav-pills nav-justified">
-											<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-											<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-										</ul>
-									</div>
+<ng-container *ngFor="let productCat of productCatgories">
+						<ng-container *ngFor="let productDetail of productMap[productCat];  let i = index">		
+<!-- 						 <img id="{{i}}" src="assets/images/home/gallery1.jpg" data-zoom-image="assets/images/home/gallery1.jpg" class="products" />				 -->
+						<div class="col-sm-4" >
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center" >
+										<img [src]="productDetail.image" class="products">
+										<!-- <a> <img imageZoom="{{productDetail.image}}" 
+											  src="{{productDetail.image}}" lensStyle='LENS' lensWidth='400' lensHeight='400' lensBorder='4'
+											    class="products" (mouseenter)="mouseover=i" (mouseleave)="mouseover=null"/> -->
+
+										 <a  class="mousehover" *ngIf="i==mouseover">
+											<img />
+										</a> 
+											 
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+								</div>
+								<div class="choose" >
+									<ul class="nav nav-pills nav-justified">
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
 								</div>
 							</div>
-						</ng-container>
+						</div>
+						</ng-container></ng-container>
 					</div><!--features_items-->
+
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
@@ -360,13 +369,15 @@
 								<li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
 							</ul>
 						</div>
+
 						<div class="tab-content">
 							<div class="tab-pane fade active in" id="tshirt" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="assets/images/home/gallery1.jpg" alt="" />
+	 											<img imageZoom="assets/images/home/gallery1.jpg" src="assets/images/home/gallery1.jpg" />
+<!-- 												<img src="assets/images/home/gallery1.jpg" alt="" /> -->
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -734,8 +745,10 @@
 							  </a>			
 						</div>
 					</div><!--/recommended_items-->
-					
+					</div>
+							</fieldset>
 				</div>
+							
 			</div>
 		</div>
 	</section>
