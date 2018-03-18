@@ -1,5 +1,4 @@
-<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
+	<div class="header_top" style="top: 0;z-index: 1000; position: sticky;"><!--header_top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
@@ -24,7 +23,8 @@
 				</div>
 			</div>
 		</div><!--/header_top-->
-		
+
+<header id="header"><!--header-->
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
@@ -184,7 +184,7 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-3" style="top: 0;z-index: 999; position: sticky;">
 					<div class="left-sidebar">
 						<h2>Category</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
@@ -322,18 +322,20 @@
 				
 				
 				<div class="col-sm-9 padding-right" >
-
-				<fieldset>
-				<div id="v-scrollable" class="scrollable section" ng2-scrollable (elementVisible)="id = $event.id">
+						<!-- <div class="search-results"
+			            infinite-scroll
+			            [infiniteScrollDistance]="2"
+			            [infiniteScrollThrottle]="100"
+			            (scrolled)="onScrollDown()" > -->
 					<div class="features_items" ><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-<ng-container *ngFor="let productCat of productCatgories">
+						<ng-container *ngFor="let productCat of productCatgories">
 						<ng-container *ngFor="let productDetail of productMap[productCat];  let i = index">		
-<!-- 						 <img id="{{i}}" src="assets/images/home/gallery1.jpg" data-zoom-image="assets/images/home/gallery1.jpg" class="products" />				 -->
+						<!-- <p *ngFor="let i of array"> {{i}}</p> -->
 						<div class="col-sm-4" >
 							<div class="product-image-wrapper">
 								<div class="single-products">
-										<div class="productinfo text-center" >
+									<div class="productinfo text-center" >
 										<img [src]="productDetail.image" class="products">
 										<!-- <a> <img imageZoom="{{productDetail.image}}" 
 											  src="{{productDetail.image}}" lensStyle='LENS' lensWidth='400' lensHeight='400' lensBorder='4'
@@ -346,7 +348,7 @@
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
+									</div>
 								</div>
 								<div class="choose" >
 									<ul class="nav nav-pills nav-justified">
@@ -356,18 +358,12 @@
 								</div>
 							</div>
 						</div>
-						</ng-container></ng-container>
+						</ng-container>
+						</ng-container>
 					</div><!--features_items-->
 
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">
-							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
-								<li><a href="#blazers" data-toggle="tab">Blazers</a></li>
-								<li><a href="#sunglass" data-toggle="tab">Sunglass</a></li>
-								<li><a href="#kids" data-toggle="tab">Kids</a></li>
-								<li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
-							</ul>
 						</div>
 
 						<div class="tab-content">
@@ -745,8 +741,8 @@
 							  </a>			
 						</div>
 					</div><!--/recommended_items-->
-					</div>
-							</fieldset>
+					<!-- </div> -->
+							<!-- </fieldset> --><!-- </div> -->
 				</div>
 							
 			</div>

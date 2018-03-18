@@ -17,6 +17,7 @@ import { KeysPipe } from './keys.pipe';
 import {ImageZoomModule} from 'angular2-image-zoom';
 import {VirtualScrollModule} from 'angular2-virtual-scroll';
 import { Ng2ScrollableModule } from 'ng2-scrollable';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 
 const appRoutes: Routes = [
@@ -82,6 +83,7 @@ const appRoutes: Routes = [
     ImageZoomModule,
     VirtualScrollModule,
     Ng2ScrollableModule,
+    InfiniteScrollModule,
 	RouterModule.forRoot(
     appRoutes,
     { useHash:true } // <-- debugging purposes only

@@ -15,9 +15,13 @@ export class HomepageComponent implements OnInit {
   productMap: any;
   images:any;
   title = 'Welcome To OneThousandShade';  
-  
+   array = [];
+  sum = 100;
   
   constructor(private http: HttpClient) {
+     for (let i = 0; i < this.sum; ++i) {
+      this.array.push(i);
+    }
     this.images = [
       {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
       {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
@@ -32,6 +36,16 @@ export class HomepageComponent implements OnInit {
       {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
       {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'}
     ];
+  }
+ onScrollDown () {
+    console.log('scrolled!!');
+
+    // add another 20 items
+    const start = this.sum;
+    this.sum += 20;
+    for (let i = start; i < this.sum; ++i) {
+      this.array.push(i);
+    }
   }
 
   ngOnInit() {
