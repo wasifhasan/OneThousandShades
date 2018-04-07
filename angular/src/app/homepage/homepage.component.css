@@ -1,4 +1,3 @@
-
 .cover-container {
     height: 180px;
     width: 100%;
@@ -20,10 +19,48 @@
     background-size: cover;
 }
 
-
 /* Styles go here */
 * { box-sizing: border-box};
 ul {list-style: none}
 .scrollable { height: 700px;}
 
 .scrollable.section {overflow:auto;}
+
+.myscroll {
+      padding: 0 20%;
+ }
+.wrapper {
+	  width: 560px;
+}
+.myitem {
+	  pointer-events: none;
+	  min-width: 200px;
+	  min-height: 200px;
+	  margin: 0 5px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+}
+.myselected-item {
+	  margin-top: 20px;
+	  text-align: center;
+}
+.myselected-item-data {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+}
+    
+ .left-right-arrow{
+	 margin-bottom:220px; 
+	 height:79px;
+	 width:32px;
+	 background:none repeat scroll 0 0 #FE980F;
+ }
+ 
+.left-right-img{
+	height:20px;
+	width:7.14px;
+	margin-top:30px;
+}

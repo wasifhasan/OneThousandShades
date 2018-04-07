@@ -18,6 +18,9 @@ import {ImageZoomModule} from 'angular2-image-zoom';
 import {VirtualScrollModule} from 'angular2-virtual-scroll';
 import { Ng2ScrollableModule } from 'ng2-scrollable';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderModule } from 'angular-image-slider';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 
 const appRoutes: Routes = [
@@ -84,6 +87,9 @@ const appRoutes: Routes = [
     VirtualScrollModule,
     Ng2ScrollableModule,
     InfiniteScrollModule,
+    BrowserAnimationsModule,
+    SliderModule,
+    Ng2CarouselamosModule,
 	RouterModule.forRoot(
     appRoutes,
     { useHash:true } // <-- debugging purposes only

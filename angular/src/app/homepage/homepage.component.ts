@@ -13,30 +13,16 @@ export class HomepageComponent implements OnInit {
   mouseover:any;
   productCatgories: any;
   productMap: any;
-  images:any;
+  public imagesUrl;
   title = 'Welcome To OneThousandShade';  
-   array = [];
+  array = [];
   sum = 100;
   
   constructor(private http: HttpClient) {
      for (let i = 0; i < this.sum; ++i) {
       this.array.push(i);
     }
-    this.images = [
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'},
-      {'url': 'assets/img/gallery/gallery-img-1-4col.jpg'}
-    ];
-  }
+      }
  onScrollDown () {
     console.log('scrolled!!');
 
@@ -49,6 +35,16 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.imagesUrl = [
+    'assets/img/gallery/118_Gatehouse_Battle_Abbey.jpg',
+    'assets/img/gallery/118_Gatehouse_Battle_Abbey.jpg',
+    'assets/img/gallery/118_Gatehouse_Battle_Abbey.jpg',
+    'assets/img/gallery/118_Gatehouse_Battle_Abbey.jpg',
+    'assets/img/gallery/118_Gatehouse_Battle_Abbey.jpg',
+    'assets/img/gallery/118_Gatehouse_Battle_Abbey.jpg',
+    'assets/img/gallery/118_Gatehouse_Battle_Abbey.jpg',
+    ];
+
     this.http.get('/api/productCategory').subscribe(data => {
       this.productCatgories = data;
     });

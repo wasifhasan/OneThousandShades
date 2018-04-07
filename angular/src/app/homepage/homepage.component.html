@@ -299,12 +299,12 @@
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-									<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+									<li><a href="#"> <span class="pull-right">(56)</span>GrÃ¼ne Erde</a></li>
 									<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
 									<li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
 									<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
 									<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-									<li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+									<li><a href="#"> <span class="pull-right">(4)</span>RÃ¶sch creative culture</a></li>
 								</ul>
 							</div>
 						</div><!--/brands_products-->
@@ -330,35 +330,46 @@
 					<div class="features_items" ><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
 						<ng-container *ngFor="let productCat of productCatgories">
-						<ng-container *ngFor="let productDetail of productMap[productCat];  let i = index">		
+						<div *ngIf="productMap[productCat]!=null && productMap[productCat]!=''" class="lsakd">
 						<!-- <p *ngFor="let i of array"> {{i}}</p> -->
-						<div class="col-sm-4" >
+						  <div ng2-carouselamos [width]="900" [items]="productMap[productCat]" [$item]="itemTemplate" [$prev]="prevTemplate" [$next]="nextTemplate">
+						  </div>
+						  <ng-template #prevTemplate>
+						  <div class="left-right-arrow">
+						    <img src="assets/images/logo/left-arrow.png" class="left-right-img"/>
+						  </div>
+						  </ng-template>
+						  <ng-template #nextTemplate>
+						  <div class="left-right-arrow">
+						    <img src="assets/images/logo/right-arrow.png" class="left-right-img" style="transform: rotate(180deg);"/>
+						  </div>
+						  </ng-template>
+						  <ng-template let-item let-i="index" width="800px" let-selectedIndex="selectedIndex" #itemTemplate>
+						  <div class="col-sm-4" >
 							<div class="product-image-wrapper">
 								<div class="single-products">
-									<div class="productinfo text-center" >
-										<img [src]="productDetail.image" class="products">
-										<!-- <a> <img imageZoom="{{productDetail.image}}" 
-											  src="{{productDetail.image}}" lensStyle='LENS' lensWidth='400' lensHeight='400' lensBorder='4'
-											    class="products" (mouseenter)="mouseover=i" (mouseleave)="mouseover=null"/> -->
-
-										 <a  class="mousehover" *ngIf="i==mouseover">
-											<img />
-										</a> 
-											 
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
+										<div class="productinfo text-center" >
+			 								 <img [src]="item.image" class="products" />
+	      										  <!-- <a> <img imageZoom="{{productDetail.image}}" src="{{productDetail.image}}" lensStyle='LENS' lensWidth='400' lensHeight='400' lensBorder='4' class="products" (mouseenter)="mouseover=i" (mouseleave)="mouseover=null"/> -->
+											 				<a  class="mousehover" *ngIf="i==mouseover">
+															<img />
+														</a> 
+												 
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
 								</div>
 								<div class="choose" >
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
+										<ul class="nav nav-pills nav-justified">
+											<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+											<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+										</ul>
 								</div>
 							</div>
 						</div>
-						</ng-container>
+					 	</ng-template>
+					 	</div>
 						</ng-container>
 					</div><!--features_items-->
 
@@ -841,7 +852,7 @@
 								<li><a href="#">Contact Us</a></li>
 								<li><a href="#">Order Status</a></li>
 								<li><a href="#">Change Location</a></li>
-								<li><a href="#">FAQ’s</a></li>
+								<li><a href="#">FAQÂ’s</a></li>
 							</ul>
 						</div>
 					</div>
@@ -899,7 +910,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright Â© 2013 E-SHOPPER Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
