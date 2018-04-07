@@ -331,6 +331,7 @@
 						<h2 class="title text-center">Features Items</h2>
 						<ng-container *ngFor="let productCat of productCatgories">
 						<div *ngIf="productMap[productCat]!=null && productMap[productCat]!=''" class="lsakd">
+						<a class="view-all" href="#">View All</a>
 						<!-- <p *ngFor="let i of array"> {{i}}</p> -->
 						  <div ng2-carouselamos [width]="900" [items]="productMap[productCat]" [$item]="itemTemplate" [$prev]="prevTemplate" [$next]="nextTemplate">
 						  </div>
@@ -349,7 +350,7 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center" >
-			 								 <img [src]="item.image" class="products" />
+			 								<a href="#"> <img [src]="item.image" class="products" /></a>
 	      										  <!-- <a> <img imageZoom="{{productDetail.image}}" src="{{productDetail.image}}" lensStyle='LENS' lensWidth='400' lensHeight='400' lensBorder='4' class="products" (mouseenter)="mouseover=i" (mouseleave)="mouseover=null"/> -->
 											 				<a  class="mousehover" *ngIf="i==mouseover">
 															<img />
@@ -372,6 +373,7 @@
 					 	</div>
 						</ng-container>
 					</div><!--features_items-->
+					
 
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">

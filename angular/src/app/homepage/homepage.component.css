@@ -64,3 +64,8 @@ ul {list-style: none}
 	width:7.14px;
 	margin-top:30px;
 }
+.view-all{
+    margin-left: 795px;
+    display: -webkit-inline-box;
+    background: #FE980F;
+}
